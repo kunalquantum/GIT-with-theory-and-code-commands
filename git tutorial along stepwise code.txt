@@ -1,0 +1,975 @@
+Notes for git
+open a folder in which you want to open the git 
+open the git bash in the folder
+
+inside the git bash:
+
+here we are specifing the name and the email :
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git
+	$ git config --global user.name Kunal
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git
+	$ git config --global user.email kunal.lalbahadur.sharma05@gmail.com
+	
+checking the name and the email set:
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git
+	$ git config --global user.email
+	kunal.lalbahadur.sharma05@gmail.com
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git
+	$ git config --global user.name
+	Kunal
+
+for opening the visual studio code via git bash
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git
+	$ code .
+To create the new file (hidden) which is .git 
+	
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git
+	$ git init
+	Initialized empty Git repository in C:/Users/Admin/Desktop/git/.git/
+	
+To show the hidden files
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ ls -lart
+	total 52
+	drwxr-xr-x 1 Kunal_dark 197121 0 Mar 20 09:27 ../
+	drwxr-xr-x 1 Kunal_dark 197121 0 Mar 20 09:40 ./
+	drwxr-xr-x 1 Kunal_dark 197121 0 Mar 20 09:40 .git/
+
+To check the status of the file inside the git repository 
+(untracked(unrecorded ),unmodified(raw),modified(edited),stagged(committed))
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git status
+	On branch master
+
+	No commits yet
+
+	Untracked files:
+	(use "git add <file>..." to include in what will be committed)
+        index.html
+
+	nothing added to commit but untracked files present (use "git add" to track)
+
+To add the file in the git to be tracked :
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git add index.html
+syntax to add the file is: git add filename 	
+To check the status of the file
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git status
+	On branch master
+
+	No commits yet
+
+	Changes to be committed:
+	(use "git rm --cached <file>..." to unstage)
+        new file:   index.html
+
+Now the file is in the stagging area and its time to initial commit
+
+Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git commit 
+then you will enter in the commit area 
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#       new file:   index.html
+
+IN this area you will not be able to type 
+unless you type 'ie'
+
+now type initial commit 
+
+Intial commit
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+#
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#       new file:   index.html
+
+now to exit this type :  escape : w q 
+
+After this you will get exited 
+get this message :
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git commit
+	[master (root-commit) 9a4bd48] Intial commit
+	1 file changed, 24 insertions(+)
+	create mode 100644 index.html
+	
+now the file is commited and ready
+if you need to modify then there are commands
+
+To create blank files command is : touch 
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (mast
+	$ touch about.html
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ touch contact.html
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ touch monuments.html
+
+we need to check the status oftenly after creation, updatiion  of files
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktoer)
+	$ git status
+	On branch master
+	Untracked files:
+	(use "git add <file>..." to include in whcommitted)
+        about.html
+        contact.html
+        monuments.html
+
+	nothing added to commit but untracked filesse "git add" to track)
+
+now we have above files untracked we need to track them all in one command and put them in stagging area
+command : git add -A
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git add -A
+Now check the status of the all files 
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git status
+	On branch master
+	Changes to be committed:
+	(use "git restore --staged <file>..." to unstage)
+			new file:   about.html
+			new file:   contact.html
+			new file:   monuments.html
+
+
+Now we have reached at commiting point 
+this means the files are ready to be recorded by git 
+
+stagging is : making files suitable for commit or to be recorded 
+commit is : making the files recorded or commiting the files
+
+NOW : we have two choices 
+1. to commit the created files
+2. to modify the created files 
+
+Now we have modified index.html and contact.html
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git status
+	On branch master
+	Changes to be committed:
+	(use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   contact.html
+        new file:   monuments.html
+
+	Changes not staged for commit:
+	(use "git add <file>..." to update what will be committed)
+	(use "git restore <file>..." to discard changes in working directory)
+        modified:   contact.html
+        modified:   index.html
+
+
+Now at this stage :
+the red color of :
+	 modified:   contact.html
+     modified:   index.html
+
+shows that the files are not added 
+this is because we have added the old version of empty files in the stagged stage 
+however we need to add the new version in stagged stage as well
+
+so we need add each version of the file in the git 
+in order to make the git trackable to files 
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git add -A
+	
+status check:
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git status
+	On branch master
+	Changes to be committed:
+	(use "git restore --staged <file>..." to unstage)
+        new file:   about.html
+        new file:   contact.html
+        modified:   index.html
+        new file:   monuments.html
+	
+now we need to add the message in the commit 
+but now with the shortcut command 
+
+command : git commit -m 'message'
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git commit -m " Added More Htmls "
+	[master 2482453]  Added More Htmls
+	4 files changed, 36 insertions(+), 1 deletion(-)
+		create mode 100644 about.html
+		create mode 100644 contact.html
+		create mode 100644 monuments.html
+
+Now if you want to clear the terminal 
+command : clear
+
+NOW if we have done some unwanted modiification 
+so we can check that 
+by command : git checkout filename
+This command will check the codes inside the file 
+and compare it with previos code in the file 
+and returns the number of path updated 
+
+Not only checks it also helps in Recovering the old codes
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git status
+	On branch master
+	Changes not staged for commit:
+	(use "git add <file>..." to update what will be committed)
+	(use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+	no changes added to commit (use "git add" and/or "git commit -a")
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git checkout index.html
+	Updated 1 path from the index
+
+we have successfully recovered the last code 
+
+Now if we have an problem 
+that someone edited all the files and shutdown the pc 
+and now the code is lost 
+
+This problem can be tackled by 
+command : git checkout -f
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git checkout -f
+
+now all your last codes are retrived in the files 
+now you are safe !!
+
+Now To See histoy :
+we have command : git log 
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git log
+	commit 2482453a19b9dede3bff9397bf50f86b1313c1da (HEAD -> master)
+	Author: Kunal <kunal.lalbahadur.sharma05@gmail.com>
+	Date:   Mon Mar 20 10:36:43 2023 +0530
+
+		Added More Htmls
+
+	commit 9a4bd48dd763591d0f7291ef526450393242971f
+	Author: Kunal <kunal.lalbahadur.sharma05@gmail.com>
+	Date:   Mon Mar 20 10:00:06 2023 +0530
+
+    Intial commit
+
+To see the filtered history 
+command: git log -p -(no of files to be reviwed)
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git log -p -1
+	commit 2482453a19b9dede3bff9397bf50f86b1313c1da (HEAD -> master)
+	Author: Kunal <kunal.lalbahadur.sharma05@gmail.com>
+	Date:   Mon Mar 20 10:36:43 2023 +0530
+
+     Added More Htmls
+
+	diff --git a/about.html b/about.html
+	new file mode 100644
+	index 0000000..e69de29
+	diff --git a/contact.html b/contact.html
+	new file mode 100644
+	index 0000000..b591d8e
+	--- /dev/null
+	+++ b/contact.html
+	@@ -0,0 +1,36 @@
+	+<!DOCTYPE html>
+	+<html lang="en">
+	+  <head>
+	+    <!-- Required meta tags -->
+	+    <meta charset="utf-8" />
+	+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+	+
+	+    <!-- Bootstrap CSS -->
+	+    <link
+	+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+	+      rel="stylesheet"
+	+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+	+      crossorigin="anonymous"
+	+    />
+	+
+	+    <title>Hello, world!</title>
+	+  </head>
+	+  <body>
+	+    <h1>Hello, world!</h1>
+	+
+	+    <!-- Optional JavaScript; choose one of the two! -->
+	+
+	+    <!-- Option 1: Bootstrap Bundle with Popper -->
+	+    <script
+	+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+	+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+	+      crossorigin="anonymous"
+	+    ></script>
+	+
+	.css"
+	+      rel="stylesheet"
+	+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65Vohhpu
+	uCOmLASjC"
+	+      crossorigin="anonymous"
+	+    />
+	+
+	+    <title>Hello, world!</title>
+	+  </head>
+	+  <body>
+	+    <h1>Hello, world!</h1>
+	+
+	+    <!-- Optional JavaScript; choose one of the two! -->
+	+
+	+    <!-- Option 1: Bootstrap Bundle with Popper -->
+	+    <script
+	+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundl
+	e.min.js"
+	+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/
+	tWtIaxVXM"
+	+      crossorigin="anonymous"
+	+    ></script>
+	+
+	.css"
+	+      rel="stylesheet"
+	+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65Vohhpu
+	uCOmLASjC"
+	+      crossorigin="anonymous"
+	+    />
+	+
+	+    <title>Hello, world!</title>
+	+  </head>
+	+  <body>
+	+    <h1>Hello, world!</h1>
+	+
+	+    <!-- Optional JavaScript; choose one of the two! -->
+	+
+	+    <!-- Option 1: Bootstrap Bundle with Popper -->
+	+    <script
+	+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundl
+	e.min.js"
+	+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/
+	tWtIaxVXM"
+	+      crossorigin="anonymous"
+	+    ></script>
+	+
+	.css"
+	+      rel="stylesheet"
+	+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65Vohhpu
+	uCOmLASjC"
+	+      crossorigin="anonymous"
+	+    />	
+	+
+	+    <title>Hello, world!</title>
+	+  </head>
+	+  <body>
+	+    <h1>Hello, world!</h1>
+	+
+	+    <!-- Optional JavaScript; choose one of the two! -->
+	+
+	+    <!-- Option 1: Bootstrap Bundle with Popper -->
+	+    <script
+	+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundl
+	e.min.js"
+	+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/
+	tWtIaxVXM"
+	+      crossorigin="anonymous"
+	+    ></script>
+	+
+	+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+	+    <!--
+	+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+	+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+	+    -->
+	+  </body>
+	+</html>
+	diff --git a/index.html b/index.html
+	index 394b795..0d47164 100644
+	--- a/index.html
+	+++ b/index.html
+	@@ -21,4 +21,3 @@
+   </body>
+   <script src="Script.js"></script>
+	</html>
+	-git
+	diff --git a/monuments.html b/monuments.html
+	new file mode 100644
+	index 0000000..e69de29
+	
+also shows the changes in the git 
+at every stage 
+
+command : git diff
+which give the single line change will be reflected 
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git diff
+	diff --git a/index.html b/index.html
+	index 0d47164..62089ad 100644
+	--- a/index.html
+	+++ b/index.html
+	@@ -4,7 +4,7 @@
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+(original)	- 	<title>Document</title>
+(changed)	+ 	<title>Document howler</title>
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+	</head>
+	<body>
+
+in this way we can inspect
+Compares 
+working directory to the staging area
+if we add the modified file then it will not show the difference
+
+
+Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+$ git add -A
+
+Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+$ git diff
+
+no output
+
+Now we need to compare 
+staging area to last area
+means:
+we will compare the added files 
+to committed files
+
+command: git diff --staged
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git diff --staged
+	diff --git a/index.html b/index.html
+	index 0d47164..62089ad 100644
+	--- a/index.html
+	+++ b/index.html
+	@@ -4,7 +4,7 @@
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	-   <title>Document</title>
+	+   <title>Document howler</title>
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+	</head>
+	<body>
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git status
+	On branch master
+	Changes to be committed:
+	(use "git restore --staged <file>..." to unstage)
+        modified:   index.html
+
+to resolve this :
+now we need to match the last commit with working directory
+ 
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git checkout -f
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git status
+	On branch master
+	nothing to commit, working tree clean
+
+To list all the files in the directory
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ ls
+	about.html  contact.html  index.html  monuments.html
+
+To remove the file from the directory
+incase you have added or created a garbage file
+command: git rm 
+this command revoes from the working directory and the stage
+
+creating the waste file
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ touch waste.html
+
+adding the files to the stage
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git add  -A
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git commit -a -m "adding waste"
+	[master fdeeaf0] adding waste
+	1 file changed, 0 insertions(+), 0 deletions(-)
+	create mode 100644 waste.html
+
+now reviewing the list existing in the working directory
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ ls
+	about.html  contact.html  index.html  monuments.html  waste.html
+
+command : git rm --cached filename
+
+(this command will remove from te stagging area but will not delete the file )
+
+Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+$ git rm --cached waste.html
+rm 'waste.html'
+
+now this will make the waste file untrackable 
+
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git status
+	On branch master
+	Changes to be committed:
+	(use "git restore --staged <file>..." to unstage)
+        deleted:    waste.html
+
+	Untracked files:
+	(use "git add <file>..." to include in what will be committed)
+        waste.html
+
+Now if you want to delete the file from the working directory 
+command : git rm filename
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git rm waste.html
+	rm 'waste.html'
+checking the existing files in working directory	
+	
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ ls
+	about.html  contact.html  index.html  monuments.html
+
+checking the status 
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git status
+	On branch master
+	Changes to be committed:
+	(use "git restore --staged <file>..." to unstage)
+        deleted:    waste.html
+
+To commiting the remove
+
+	$ git commit -a -m "Removing files"
+	[master 20a657e] Removing files
+	1 file changed, 0 insertions(+), 0 deletions(-)
+	delete mode 100644 waste.html
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git log -p -2
+	commit 20a657ed0158b7ec9b51c794a27d17fef544494f (HEAD -> master)
+	Author: Kunal <kunal.lalbahadur.sharma05@gmail.com>
+	Date:   Tue Mar 21 19:47:07 2023 +0530
+
+    Removing files
+
+	diff --git a/waste.html b/waste.html
+	deleted file mode 100644
+	index e69de29..0000000
+
+	commit fdeeaf0b2555ec3e9a12e58cff33199a22b60db8
+	Author: Kunal <kunal.lalbahadur.sharma05@gmail.com>
+	Date:   Tue Mar 21 19:22:27 2023 +0530
+
+    adding waste
+
+	diff --git a/waste.html b/waste.html
+	new file mode 100644
+	index 0000000..e69de29
+
+shorthand command to quickly check the modified files
+command : git status -s
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git status -s
+	M contact.html
+	M index.html
+	M monuments.html
+	
+this shows that m represents that the files are modified 
+
+There must be files , that need to be ignored 
+there must be randomly generated files that need to be tracked 
+so we need files that will automatically get ignored by git
+
+for this we have the file
+.gitignore
+ 
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ touch .gitignore
+	
+this will create a file that will be ignored by the git
+
+Creating the log files
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ touch mylog.log
+
+now this log file may contains some logs 
+or many logs 
+we dont need to track the mylog.log file 
+so we can introduce it into the gitignore file 
+
+	
+after saving the mylog.log file into the 
+gitignore file the files under gitignpre will get ignored after adding to stage
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git add -A
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git status
+	On branch master
+	Changes to be committed:
+	(use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   mylog.log
+
+Now commiting "the ignored and created files"
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git commit -a -m"ignored some files and added some files"
+	[master df7f875] ignored some files and added some files
+	2 files changed, 4 insertions(+)
+	create mode 100644 .gitignore
+	create mode 100644 mylog.log
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)	
+	$ git status
+	On branch master
+	nothing to commit, working tree clean
+
+at this point of time git will ignore all the mylog.log file 
+but if I want that git should only ignore the file of mylog of root or the gitignore and other log files should not be ignored
+then
+
+we will use '/'before the file name in the gitignore file 
+
+removing the files
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git rm --cached mylog.log
+	rm 'mylog.log'
+
+Now if you want to ignore all the files in the scope of every folder
+ then  inside the .gitignore 
+ command: *.log
+ or any extension such as 
+ *.cpp
+ *.py
+ *.java
+ *.txt
+ *.bat
+ *.inc
+ *.exe
+ 
+Now if we want to ignore whole directory (folder)(means want to get ignored by the git )
+
+create a new folder (ignore)
+now create a new html file in the ignore folder and save 
+now check the status of the folder
+ 
+ 
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git status
+	On branch master
+	Changes to be committed:
+	(use "git restore --staged <file>..." to unstage)
+			modified:   .gitignore
+			deleted:    mylog.log
+
+	Untracked files:
+	(use "git add <file>..." to include in what will be committed)
+			ignore/
+
+
+this is showing that ignore file is untracked 
+but i dont want to track the file as i want to ignore the files 
+
+now we will include the name of the directory or the folder in the gitignore file 
+
+command: foldername/
+in our case : ignore/
+
+(in the gitignore file)
+
+checking the status 
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git status
+	On branch master
+	Changes to be committed:
+	(use "git restore --staged <file>..." to unstage)
+        modified:   .gitignore
+        deleted:    mylog.log
+
+
+adding to stagging 
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git add -A
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git status
+	
+checking the status
+
+	On branch master
+	Changes to be committed:
+	(use "git restore --staged <file>..." to unstage)
+		modified:   .gitignore
+		deleted:    mylog.log
+
+commiting the logs 
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git commit -a -m" commit message"
+	[master 0c8e32c]  commit message
+	2 files changed, 3 insertions(+), 4 deletions(-)
+	delete mode 100644 mylog.log
+
+checking the status 
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git status
+	On branch master
+	nothing to commit, working tree clean
+
+Now we will check the last 3 logs(history of the logs)
+
+command: git log -p -3
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git log -p -3
+	commit 0c8e32c06a1accb003fb638e5a037efd02998e4d (HEAD -> master)
+	Author: Kunal <kunal.lalbahadur.sharma05@gmail.com>
+	Date:   Fri Mar 24 12:15:19 2023 +0530
+
+     commit message
+
+	diff --git a/.gitignore b/.gitignore
+	index 1629e0b..5b1f982 100644
+	--- a/.gitignore
+	+++ b/.gitignore
+	@@ -1 +1,3 @@
+	-mylog.log
+	+/mylog.log
+	+*.log
+	+ignore/
+	\ No newline at end of file
+	diff --git a/mylog.log b/mylog.log
+	deleted file mode 100644
+	index 9dacb4a..0000000
+	--- a/mylog.log
+	+++ /dev/null
+	@@ -1,3 +0,0 @@
+	-processing..
+	-downloding...
+	-uploading...
+
+	commit df7f8755431b61c152445651c931eadb0e87ba03
+	Author: Kunal <kunal.lalbahadur.sharma05@gmail.com>
+	Date:   Thu Mar 23 12:22:52 2023 +0530
+
+    ignored some files and added some files
+
+	diff --git a/.gitignore b/.gitignore
+	new file mode 100644
+	index 0000000..1629e0b
+	Date:   Thu Mar 23 12:22:52 2023 +0530
+
+    ignored some files and added some files
+
+	diff --git a/.gitignore b/.gitignore
+	new file mode 100644
+	index 0000000..1629e0b
+	--- /dev/null
+	+++ b/.gitignore
+	@@ -0,0 +1 @@
+	+mylog.log
+	diff --git a/mylog.log b/mylog.log
+	new file mode 100644
+	index 0000000..9dacb4a
+	--- /dev/null
+	+++ b/mylog.log
+	@@ -0,0 +1,3 @@
+	+processing..
+	+downloding...
+	+uploading...
+
+	commit 20a657ed0158b7ec9b51c794a27d17fef544494f
+	Author: Kunal <kunal.lalbahadur.sharma05@gmail.com>
+	Date:   Tue Mar 21 19:47:07 2023 +0530
+
+    Removing files
+
+	diff --git a/waste.html b/waste.html
+	deleted file mode 100644
+	index e69de29..0000000
+	(END)
+
+Now we will start with branches in the git
+(only basics)
+
+1.we will create a branch
+(why we want branches)?
+suppose we want to working on important project 
+and we are not in position to afford any kind of messing up
+
+so we need a copy of the main codes
+so that we do not interfere with the main file 
+hence the master code will remain unaffected
+this is what we call it a branch 
+
+command to create the branch:
+git branch nameofbranch
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git branch feature1
+
+branch feature 1 created
+
+command to get the name of the branches
+git branch 
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git branch
+	feature1
+	* master
+	
+The green color of the master shows that you are in the master branch 
+
+now if we wnat to get inside the branch 
+command : git checkout nameofbranch
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git checkout feature1
+	Switched to branch 'feature1'
+
+now check the status and note the difference 
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (feature1)
+	$ git status
+->  On branch feature1
+	nothing to commit, working tree clean
+
+here on the second line 
+we can notice that the change from master to the branchname (feature1)
+
+so branch gives us the independency of trying out the debugging or the experiment 
+without affecting the main code 
+
+Now if we have successfully debugged or improved the code with respect to any complexity or the logic
+and we want to make the changes in main (master) branch 
+we need to merge the branch into master
+
+ 
+before command change the improvements 
+and save it 
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (feature1)
+	$ git status
+	On branch feature1
+	Changes not staged for commit:
+	(use "git add <file>..." to update what will be committed)
+	(use "git restore <file>..." to discard changes in working directory)
+        modified:   index.html
+
+	no changes added to commit (use "git add" and/or "git commit -a")
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (feature1)
+	$ git add -A
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (feature1)
+	$ git commit  -m" Editd the text"
+	[feature1 85d36f3]  Editd the text
+	1 file changed, 1 insertion(+), 1 deletion(-)
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (feature1)
+	$ git status
+	On branch feature1
+	nothing to commit, working tree clean
+
+
+switching is simple:
+
+git checkout feature1
+(this will take you to  the branch )
+
+git checkout master
+(this will take you to the master)
+
+now we need to merge the master and the branch 
+
+command : git merge nameofbranch
+
+switcing to master from branch:
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (feature1)
+	$ git checkout master
+	Switched to branch 'master'
+
+merging the master and the branch
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git merge feature1
+	Updating 0c8e32c..85d36f3
+	Fast-forward
+	index.html | 2 +-
+	1 file changed, 1 insertion(+), 1 deletion(-)
+
+checking the history:
+
+	Kunal_dark@DESKTOP-G4B6C0V MINGW64 ~/Desktop/git (master)
+	$ git log -p -2
+	commit 85d36f34b5b2b5eabf4b7ae86a0aa92f725ebd0d (HEAD -> master, feature1)
+	Author: Kunal <kunal.lalbahadur.sharma05@gmail.com>
+	Date:   Fri Mar 24 12:47:02 2023 +0530
+
+		Editd the text
+
+	diff --git a/index.html b/index.html
+	index 0d47164..0894b85 100644	
+	--- a/index.html
+	+++ b/index.html
+	@@ -4,7 +4,7 @@
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	-    <title>Document</title>
+	+    <title>Document 30</title>
+		<link rel="stylesheet" type="text/css" href="Style.css" />
+	</head>
+	<body>
+
+	commit 0c8e32c06a1accb003fb638e5a037efd02998e4d
+	Author: Kunal <kunal.lalbahadur.sharma05@gmail.com>
+	Date:   Fri Mar 24 12:15:19 2023 +0530
+
+
